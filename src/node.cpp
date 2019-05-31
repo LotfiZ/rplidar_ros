@@ -65,9 +65,9 @@ void publish_scan(ros::Publisher *pub,
     bool reversed = (angle_max > angle_min);
     if ( reversed ) {
       scan_msg.angle_min =  M_PI - angle_max;
-      scan_msg.angle_max =  M_PI - angle_min;
+      scan_msg.angle_max = (M_PI - angle_min);
     } else {
-      scan_msg.angle_min =  M_PI - angle_min;
+      scan_msg.angle_min = (M_PI - angle_min);
       scan_msg.angle_max =  M_PI - angle_max;
     }
     scan_msg.angle_increment =
@@ -187,7 +187,7 @@ int main(int argc, char * argv[]) {
     std::string frame_id;
     bool inverted = false;
     bool angle_compensate = true;
-    float max_distance = 8.0;
+    float max_distance = 18.0;
     int angle_compensate_multiple = 1;//it stand of angle compensate at per 1 degree
     std::string scan_mode;
     ros::NodeHandle nh;
